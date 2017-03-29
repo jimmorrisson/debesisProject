@@ -1,0 +1,7 @@
+{% extends "workers/header.html" %}
+{% block content %}
+    {{ instance.first_name }}<br/>
+    {{ instance.last_name }}<br/>
+    <p><a href="/workers/{{ instance.id }}/edit">Update</a></p>
+    <p><a href="/workers/{{ instance.id }}/delete">Delete</a></p>
+{% endblock %}

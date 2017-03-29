@@ -1,0 +1,11 @@
+{% extends 'workers/header.html' %}
+{% block content %}
+    <p>Add /create in url to create new worker </p>
+    {% for obj in object_list %}
+        {% url 'workers:detail' id=obj.id %}
+        <a href='{{ obj.get_absolute_url }}'>{{ obj.first_name }}</a><br/>
+        {{ obj.first_name }}<br/>
+        {{ obj.last_name }}<br/>
+        {{ obj.created }}<br/><br/>
+    {% endfor %}
+{% endblock %}
