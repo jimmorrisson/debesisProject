@@ -8,7 +8,7 @@ class EmployeeForm(forms.ModelForm):
             "first_name",
             "last_name",
             'jobposition',
-            #'email',
-            #'phone',
-            #'is_working',
+            'email',
+            'phone',
+            'is_working',
         ]

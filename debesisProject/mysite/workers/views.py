@@ -34,7 +34,7 @@ def emp_details(request, id=None):
     context = {
         "first_name": instance.first_name,
         "instance": instance,
-        }
+    }
     return render(request, 'workers/emp_detail.html', context)
 
 
@@ -44,7 +44,7 @@ def emp_update(request, id=None):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
-        #message success
+        # message success
         return HttpResponseRedirect(instance.get_absolute_url())
     context = {
         "title": instance.first_name,
@@ -57,6 +57,5 @@ def emp_update(request, id=None):
 def emp_delete(request, id=None):
     instance = get_object_or_404(Employee, id=id)
     instance.delete()
-    #essages.SUCCESS(request, "Successfully deleted")
-    return redirect ("workers:list")
-
+    # essages.SUCCESS(request, "Successfully deleted")
+    return redirect("workers:list")

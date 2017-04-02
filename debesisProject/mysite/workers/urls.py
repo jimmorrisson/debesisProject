@@ -15,19 +15,20 @@ Including another URLconf
 """
 from django.conf.urls import url
 from .views import *
+
 urlpatterns = [
-    #localhost/workers
+    # localhost/workers
     url(r'^$', emp_list, name='list'),
-    #localhost/workers/create
+    # localhost/workers/create
     url(r'^create/$', emp_create, name='create'),
-    #localhost/1
+    # localhost/1
     url(r'^(?P<id>\d+)/$', emp_details, name='detail'),
-    #localhost/1/edit
+    # localhost/1/edit
     url(r'^(?P<id>\d+)/edit/$', emp_update, name='update'),
-    #localhost/1/delete
+    # localhost/1/delete
     url(r'^(?P<id>\d+)/delete/$', emp_delete),
-    #/jobposition/add
-    #url(r'^/employers/(?P<slug>[\w-]+)/$', emp_details, name='details'),
-   # url(r'^jobposition/add/$', views.JobPositionCreate.as_view(), name='jobPosition-add'),
+    # /jobposition/add
+    # url(r'^/employers/(?P<slug>[\w-]+)/$', emp_details, name='details'),
+    # url(r'^jobposition/add/$', views.JobPositionCreate.as_view(), name='jobPosition-add'),
 
 ]
