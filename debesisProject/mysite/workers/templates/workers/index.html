@@ -1,15 +1,19 @@
 {% extends 'workers/header.html' %}
 {% block content %}
-    <p>Add /create in url to create new worker </p>
+    <p >Add /create in url to create new worker </p>
     {% for obj in object_list %}
-        <div class="glyphicon-stop">
+        {% url 'workers:detail' id=obj.id %}
+            <a href='{{ obj.get_absolute_url }}'>{{ obj.first_name }}</a><br/>
+        <div style="float: left; padding: 30px;">
             First name<br/>
-            First name<br/>
-            First name<br/>
+            Last name<br/>
+            Email <br/>
+            Phone<br/>
+            Is Working<br/>
+            Created<br/>
         </div>
         <div >
-            {% url 'workers:detail' id=obj.id %}
-            <a href='{{ obj.get_absolute_url }}'>{{ obj.first_name }}</a><br/>
+            <br/><br/>
             {{ obj.first_name }}<br/>
             {{ obj.last_name }}<br/>
             {{ obj.email }}<br/>

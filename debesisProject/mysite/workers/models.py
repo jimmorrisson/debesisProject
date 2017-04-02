@@ -6,6 +6,9 @@ class JobPosition(models.Model):
     name = models.CharField(max_length=200)
     created = models.DateTimeField('date created')
 
+    def get_absolute_url(self):
+        return reverse("jobPosition:details", kwargs={"id": self.id})
+
     def __str__(self):
         return self.name
 

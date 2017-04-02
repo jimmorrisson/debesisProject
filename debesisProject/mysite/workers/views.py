@@ -1,8 +1,6 @@
 from django.shortcuts import redirect, render, get_object_or_404
-from django.views import generic
 from django.http import HttpResponse, HttpResponseRedirect
-from django.template import loader
-from .models import JobPosition, Employee
+from .models import Employee
 from .forms import EmployeeForm
 from django.contrib import messages
 
@@ -11,7 +9,7 @@ def emp_list(request):
     queryset = Employee.objects.all()
     context = {
         "object_list": queryset,
-        "title": "My user list",
+        "title": "My workers list",
     }
     return render(request, 'workers/index.html', context)
 

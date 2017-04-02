@@ -1,0 +1,8 @@
+{% extends 'jobPosition/header.html' %}
+{% block content %}
+    {% for obj in obj_list %}
+        {{ obj.id }}<br/>
+        {{ obj.name }}<br/>
+        {{ obj.created }}<br/><br/>
+    {% endfor %}
+{% endblock %}
